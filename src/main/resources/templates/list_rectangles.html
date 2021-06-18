@@ -16,7 +16,7 @@
 <main>
   <h1>List of Rectangles</h1>
   <section class="container">
-    <div class="content" th:each="${rectangles}">
+    <div class="content" th:each="rectangle : ${rectangles}">
       <div th:styles="'width:'+${rectangle.width}+'px;height:'+${rectangle.height}+'px;background-color:'+${color}+';'" th:text="${rectangle.name}">
       </div>
     </div>
