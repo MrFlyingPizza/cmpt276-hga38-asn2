@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" th:href="@{/stylesheets/styles.css}">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+  <script th:src="@{/javascript/form.js}"></script>
+  <title>Create Rectangle</title>
+</head>
+<body>
+<header th:fragment="header">
+  <a href="/" th:classappend="${selected == 'index' ? 'selected' : ''}">Index</a>
+  <a href="/list_rectangles" th:classappend="${selected == 'list_rectangles' ? 'selected' : ''}">List Rectangles</a>
+  <a href="/new_rectangle" th:classappend="${selected == 'new_rectangle' ? 'selected' : ''}">Create Rectangle</a>
+</header>
+</body>
+</html>

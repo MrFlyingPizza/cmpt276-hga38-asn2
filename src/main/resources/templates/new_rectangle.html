@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/stylesheets/styles.css}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <script th:src="@{/javascript/form.js}"></script>
+    <title>Create Rectangle</title>
+</head>
+<body>
+<header th:replace="fragments/header :: header"></header>
+
+<main>
+    <h1>Create Rectangle</h1>
+    <section class="container">
+        <form action="#" class="content" th:action="@{/new_rectangle}" th:object="${rectangle}" method="post">
+            <label>Display</label>
+            <div id="display"></div>
+            <table>
+                <tr>
+                    <td>
+                        <label for="name">Name of rectangle:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="name" th:field="*{name}" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="width">Width:</label>
+                    </td>
+                    <td>
+                        <input type="number" id="width" th:field="*{width}" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="height" >Height:</label>
+                    </td>
+                    <td>
+                        <input type="number" id="height" th:field="*{height}" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="color">Color:</label>
+                    </td>
+                    <td>
+                        <input type="color" id="color" th:field="*{color}" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="loved_color">Loves color:</label>
+                    </td>
+                    <td>
+                        <input type="color" id="loved_color" th:field="*{lovedColor}" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="hated_color">Hates color:</label>
+                    </td>
+                    <td>
+                        <input type="color" id="hated_color" th:field="*{hatedColor}" required>
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" value="Create Rectangle">
+        </form>
+    </section>
+
+</main>
+</body>
+</html>
