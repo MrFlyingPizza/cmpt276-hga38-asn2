@@ -22,6 +22,8 @@ public class RectangleListController {
     @RequestMapping("/list_rectangles")
     private String list_rectangles(Model model) {
         Iterable<Rectangle> rectangles = repository.findAll();
+        long num = repository.count();
+        System.out.println("TOTAL IN REPO " + num);
         for (Rectangle rectangle : rectangles) {
             System.out.println("Collected rectangle " + rectangle.getName());
         }
