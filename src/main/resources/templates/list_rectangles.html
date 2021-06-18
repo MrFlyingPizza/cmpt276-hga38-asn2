@@ -6,6 +6,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
   <title>Rectangles Index</title>
+  <style>
+
+  </style>
 </head>
 <body>
 <header th:replace="fragments/header :: header"></header>
@@ -13,8 +16,9 @@
 <main>
   <h1>List of Rectangles</h1>
   <section class="container">
-    <div class="content">
-
+    <div class="content" th:each="${rectangles}">
+      <div th:styles="'width:'+${rectangle.width}+'px;height:'+${rectangle.height}+'px;background-color:'+${color}+';'" th:text="${rectangle.name}">
+      </div>
     </div>
   </section>
 </main>

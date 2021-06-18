@@ -10,14 +10,14 @@ import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Collection;
 
 @Controller
 public class RectangleListController {
 
-
-
     @Autowired
-    DataSource dataSource;
+    RectangleRepository repository;
 
     @ModelAttribute("selected")
     String selected() {
@@ -26,13 +26,8 @@ public class RectangleListController {
 
     @RequestMapping("/list_rectangles")
     private String list_rectangles(Model model) {
-        try {
-            String sql = "SELECT * FROM rectangles";
-            Statement statement = dataSource.getConnection().createStatement();
-            ResultSet resultSet = statement.executeQuery(sql);
-        } catch (SQLException throwable) {
-            throwable.printStackTrace();
-        }
+        ArrayList<Rectangle> rectangles = (ArrayList<Rectangle>) repository.findAll();
+        model.addAttribute("rectangles", rectangles);
         return "list_rectangles";
     }
 
