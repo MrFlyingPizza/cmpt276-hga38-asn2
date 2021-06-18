@@ -26,7 +26,7 @@ public class RectangleListController {
 
     @RequestMapping("/list_rectangles")
     private String list_rectangles(Model model) {
-        ArrayList<Rectangle> rectangles = (ArrayList<Rectangle>) repository.findAll();
+        Iterable<Rectangle> rectangles = repository.findAll();
         model.addAttribute("rectangles", rectangles);
         return "list_rectangles";
     }
