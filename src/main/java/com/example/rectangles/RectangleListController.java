@@ -6,12 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.sql.DataSource;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Iterator;
 
 @Controller
 public class RectangleListController {
@@ -27,6 +22,9 @@ public class RectangleListController {
     @RequestMapping("/list_rectangles")
     private String list_rectangles(Model model) {
         Iterable<Rectangle> rectangles = repository.findAll();
+        for (Rectangle rectangle : rectangles) {
+            System.out.println("Collected rectangle " + rectangle.getName());
+        }
         model.addAttribute("rectangles", rectangles);
         return "list_rectangles";
     }
