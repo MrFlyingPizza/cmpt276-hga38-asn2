@@ -17,7 +17,7 @@
   <h1>List of Rectangles</h1>
   <section class="container">
     <div class="content" th:each="rectangle : ${rectangles}">
-      <a th:href="/rectangle/${rectangle.id}">
+      <a th:href="'/rectangle/'+${rectangle.id}">
         <div th:style="'width:'+${rectangle.width}+'px;height:'+${rectangle.height}+'px;background-color:'+${rectangle.color}+';'" th:text="${rectangle.name}"></div>
       </a>
     </div>
