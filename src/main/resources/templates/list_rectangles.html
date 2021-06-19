@@ -7,7 +7,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
   <title>Rectangles Index</title>
   <style>
+    .display {
+      width: 100%;
+      height: 100%;
+      border: black solid 0.2em;
+    }
 
+    th td {
+      height: 4em;
+      font-family: 'Staatliches', cursive;
+    }
   </style>
 </head>
 <body>
@@ -16,11 +25,42 @@
 <main>
   <h1>List of Rectangles</h1>
   <section class="container">
-    <div class="content" th:each="rectangle : ${rectangles}">
-      <a th:href="'/rectangle/'+${rectangle.id}">
-        <div th:style="'width:'+${rectangle.width}+'px;height:'+${rectangle.height}+'px;background-color:'+${rectangle.color}+';'" th:text="${rectangle.name}"></div>
-      </a>
-    </div>
+    <tr>
+      <th>
+        Display
+      </th>
+      <th>
+        Name
+      </th>
+      <th>
+        Color
+      </th>
+      <th>
+        Width
+      </th>
+      <th>
+        Height
+      </th>
+      <th>
+        Loved Color
+      </th>
+      <th>
+        Hated Color
+      </th>
+    </tr>
+    <tr th:each="rectangle : ${rectangles}">
+      <td>
+        <a th:href="'/rectangle/'+${rectangle.id}">
+          <div class="display" th:style="'background-color:'+${rectangle.color}+';'"></div>
+        </a>
+      </td>
+      <td th:text="${rectangle.name}"></td>
+      <td th:text="${rectangle.color}" th:style="'background-color:'+${rectangle.color}+';'"></td>
+      <td th:text="${rectangle.width}"></td>
+      <td th:text="${rectangle.height}"></td>
+      <td th:text="${rectangle.lovedColor}" th:style="'background-color:'+${rectangle.lovedColor}+';'"></td>
+      <td th:text="${rectangle.hatedColor}" th:style="'background-color:'+${rectangle.hatedColor}+';'"></td>
+    </tr>
   </section>
 </main>
 </body>
