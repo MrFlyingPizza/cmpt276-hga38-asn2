@@ -8,13 +8,19 @@
   <title>Rectangles Index</title>
   <style>
     .display {
-      width: 100%;
-      height: 100%;
+      width: 2em;
+      height: 2em;
       border: black solid 0.2em;
+    }
+
+    table {
+      width: 100%;
+      table-layout: fixed;
     }
 
     th td {
       height: 4em;
+      width:
       font-family: 'Staatliches', cursive;
     }
   </style>
@@ -25,42 +31,44 @@
 <main>
   <h1>List of Rectangles</h1>
   <section class="container">
-    <tr>
-      <th>
-        Display
-      </th>
-      <th>
-        Name
-      </th>
-      <th>
-        Color
-      </th>
-      <th>
-        Width
-      </th>
-      <th>
-        Height
-      </th>
-      <th>
-        Loved Color
-      </th>
-      <th>
-        Hated Color
-      </th>
-    </tr>
-    <tr th:each="rectangle : ${rectangles}">
-      <td>
-        <a th:href="'/rectangle/'+${rectangle.id}">
-          <div class="display" th:style="'background-color:'+${rectangle.color}+';'"></div>
-        </a>
-      </td>
-      <td th:text="${rectangle.name}"></td>
-      <td th:text="${rectangle.color}" th:style="'background-color:'+${rectangle.color}+';'"></td>
-      <td th:text="${rectangle.width}"></td>
-      <td th:text="${rectangle.height}"></td>
-      <td th:text="${rectangle.lovedColor}" th:style="'background-color:'+${rectangle.lovedColor}+';'"></td>
-      <td th:text="${rectangle.hatedColor}" th:style="'background-color:'+${rectangle.hatedColor}+';'"></td>
-    </tr>
+    <table>
+      <tr>
+        <th>
+          Display
+        </th>
+        <th>
+          Name
+        </th>
+        <th>
+          Color
+        </th>
+        <th>
+          Width
+        </th>
+        <th>
+          Height
+        </th>
+        <th>
+          Loved Color
+        </th>
+        <th>
+          Hated Color
+        </th>
+      </tr>
+      <tr th:each="rectangle : ${rectangles}">
+        <td>
+          <a th:href="'/rectangle/'+${rectangle.id}">
+            <div class="display" th:style="'background-color:'+${rectangle.color}+';'"></div>
+          </a>
+        </td>
+        <td th:text="${rectangle.name}"></td>
+        <td th:text="${rectangle.color}" th:style="'background-color:'+${rectangle.color}+';'"></td>
+        <td th:text="${rectangle.width}"></td>
+        <td th:text="${rectangle.height}"></td>
+        <td th:text="${rectangle.lovedColor}" th:style="'background-color:'+${rectangle.lovedColor}+';'"></td>
+        <td th:text="${rectangle.hatedColor}" th:style="'background-color:'+${rectangle.hatedColor}+';'"></td>
+      </tr>
+    </table>
   </section>
 </main>
 </body>
