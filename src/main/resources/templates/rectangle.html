@@ -6,6 +6,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <title>Rectangles Info</title>
+    <style>
+        td {
+            border-bottom: white;
+        }
+        table {
+            width: 100%;
+            table-layout: fixed;
+        }
+        h2 {
+            color: coral;
+        }
+        .display {
+            border: black solid 0.5em;
+        }
+    </style>
 </head>
 <body>
 <header th:replace="fragments/header :: header"></header>
@@ -14,9 +29,58 @@
     <h1>Rectangle Information</h1>
     <section class="container">
         <div class="content">
-            <h2>Display</h2>
-            <div class="display-box"></div>
-            <h2>Name</h2>
+            <h2>
+                Display
+            </h2>
+            <div class="display" th:style="'width:'+${rectangle.width}+'px;height:'+${rectangle.height}+'px;background-color:'+${rectangle.color}+';'"></div>
+            <table>
+                <tr>
+                    <td>
+                        <h2>
+                            Name
+                        </h2>
+                    </td>
+                    <td>
+                        <h2>Color</h2>
+                    </td>
+                    <td>
+                        <h2>
+                            Width
+                        </h2>
+                    </td>
+                    <td>
+                        <h2>
+                            Height
+                        </h2>
+                    </td>
+                    <td>
+                        <h2>Loved Color</h2>
+                    </td>
+                    <td>
+                        <h2>Hated Color</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1 th:text="${rectangle.name}"></h1>
+                    </td>
+                    <td>
+                        <h1 th:text="${rectangle.color}"></h1>
+                    </td>
+                    <td>
+                        <h1 th:text="${rectangle.width}"></h1>
+                    </td>
+                    <td>
+                        <h1 th:text="${rectangle.height}"></h1>
+                    </td>
+                    <td>
+                        <h1 th:text="${rectangle.lovedColor}"></h1>
+                    </td>
+                    <td>
+                        <h1 th:text="${rectangle.hatedColor}"></h1>
+                    </td>
+                </tr>
+            </table>
         </div>
     </section>
 </main>
