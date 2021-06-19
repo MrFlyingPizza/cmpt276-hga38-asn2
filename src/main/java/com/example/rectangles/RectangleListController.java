@@ -23,10 +23,6 @@ public class RectangleListController {
     private String list_rectangles(Model model) {
         Iterable<Rectangle> rectangles = repository.findAll();
         long num = repository.count();
-        System.out.println("TOTAL IN REPO " + num);
-        for (Rectangle rectangle : rectangles) {
-            System.out.println("Collected rectangle " + rectangle.getName());
-        }
         model.addAttribute("rectangles", rectangles);
         return "list_rectangles";
     }
