@@ -45,7 +45,7 @@ button:hover, input[type=submit]:hover {
     background-color: coral;
 }
 
-input, label {
+label {
     font-family: 'Staatliches', cursive;
 }
 
