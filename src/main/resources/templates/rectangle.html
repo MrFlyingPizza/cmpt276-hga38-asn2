@@ -79,8 +79,11 @@
                     <td>
                         <h1 th:text="${rectangle.hatedColor}"></h1>
                     </td>
-                </tr>
             </table>
+            <form th:action="'/delete?rid='+${rectangle.id}" method="post">
+                <label for="delete-button">Delete this rectangle (cannot undo):</label>
+                <input id="delete-button" type="submit" value="DELETE">
+            </form>
         </div>
     </section>
 </main>
