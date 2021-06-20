@@ -6,24 +6,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <title>Rectangles Index</title>
-    <style>
-        .button {
-            width: 10em;
-            height: 5em;
-            margin: 0.5em;
-            background-color: black;
-            display: inline-block;
-            text-align: center;
-            vertical-align: middle;
-            color: white;
-            font-family: 'Staatliches', cursive;
-        }
-
-        .button:hover {
-            color: black;
-            background-color: coral;
-        }
-    </style>
 </head>
 <body>
 <header th:replace="fragments/header :: header"></header>
@@ -39,7 +21,7 @@
                 </button>
             </a>
             <a href="/new_rectangle">
-                <button class="button">
+                <button>
                     Create a rectangle.
                 </button>
             </a>

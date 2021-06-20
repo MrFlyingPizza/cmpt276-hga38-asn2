@@ -26,9 +26,9 @@ public class RectangleCreateController {
 
     @PostMapping("/new_rectangle")
     private String submitRectangleForm(@ModelAttribute Rectangle rectangle, Model model) {
-        System.out.println("adding rectangle " + rectangle.getName());
         repository.save(rectangle);
-
+        model.addAttribute("success", true);
+        model.addAttribute("rid", rectangle.getId());
         return "result";
     }
 }

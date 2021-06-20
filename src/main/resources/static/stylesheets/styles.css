@@ -28,19 +28,21 @@ form {
     padding: 0.5em 0.5em 0.5em 0.5em;
 }
 
-input[type=button], input[type=submit], input[type=reset] {
-    background-color: #000000;
-    border: none;
+button, input[type=submit] {
+    width: 10em;
+    height: 5em;
+    margin: 0.5em;
+    background-color: black;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
     color: white;
-    padding: 16px 32px;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
- }
+    font-family: 'Staatliches', cursive;
+}
 
-input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
-    background-color: coral;
+button:hover, input[type=submit]:hover {
     color: black;
+    background-color: coral;
 }
 
 input, label {

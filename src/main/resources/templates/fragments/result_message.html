@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Result Messages</title>
+</head>
+<body>
+<div th:fragment="success">
+    <h1>Successfully Created Rectangle!</h1>
+    <a th:href="'/rectangle/'+${rid}">
+        <button>Visit Rectangle.</button>
+    </a>
+    <a href="/list_rectangles">
+        <button>Go to List.</button>
+    </a>
+</div>
+<div th:fragment="failure">
+    <h1>Failed to Create Rectangle!</h1>
+</div>
+</body>
+</html>
