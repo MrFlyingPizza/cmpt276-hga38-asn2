@@ -16,10 +16,10 @@ public class RectangleDeleteController {
 
     @PostMapping("/delete")
     private String deleteRectangle(@RequestParam long rid, Model model) {
-        Optional<Rectangle> name = repository.findById(rid);
+        Optional<Rectangle> result = repository.findById(rid);
         repository.deleteById(rid);
-        if (name.isPresent()) {
-            model.addAttribute("name", name.get());
+        if (result.isPresent()) {
+            model.addAttribute("name", result.get().getName());
             return "delete_confirmation";
         } else {
             return "error";
