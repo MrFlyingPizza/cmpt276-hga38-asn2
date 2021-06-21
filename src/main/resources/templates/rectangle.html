@@ -18,6 +18,11 @@
         h2 {
             color: coral;
         }
+
+        .display-container {
+            overflow: scroll;
+            max-height: 50em;
+        }
         .display {
             border: black solid 0.5em;
         }
@@ -33,7 +38,9 @@
             <h2>
                 Display
             </h2>
-            <div class="display" th:style="'width:'+${rectangle.width}+'px;height:'+${rectangle.height}+'px;background-color:'+${rectangle.color}+';'"></div>
+            <div class="display-container">
+                <div class="display" th:style="'width:'+${rectangle.width}+'px;height:'+${rectangle.height}+'px;background-color:'+${rectangle.color}+';'"></div>
+            </div>
             <table>
                 <tr>
                     <td>
