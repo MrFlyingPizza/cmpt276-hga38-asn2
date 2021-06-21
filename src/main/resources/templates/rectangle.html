@@ -50,44 +50,54 @@
                         </h2>
                     </td>
                     <td>
+                        <h1 th:text="${rectangle.name}"></h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         <h2>Color</h2>
                     </td>
+                    <td>
+                        <h1 th:text="${rectangle.color}"></h1>
+                    </td>
+                </tr>
+                <tr>
                     <td>
                         <h2>
                             Width
                         </h2>
                     </td>
                     <td>
+                        <h1 th:text="${rectangle.width}"></h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         <h2>
                             Height
                         </h2>
                     </td>
                     <td>
-                        <h2>Loved Color</h2>
-                    </td>
-                    <td>
-                        <h2>Hated Color</h2>
+                        <h1 th:text="${rectangle.height}"></h1>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <h1 th:text="${rectangle.name}"></h1>
-                    </td>
-                    <td>
-                        <h1 th:text="${rectangle.color}"></h1>
-                    </td>
-                    <td>
-                        <h1 th:text="${rectangle.width}"></h1>
-                    </td>
-                    <td>
-                        <h1 th:text="${rectangle.height}"></h1>
+                        <h2>Loved Color</h2>
                     </td>
                     <td>
                         <h1 th:text="${rectangle.lovedColor}"></h1>
                     </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h2>Hated Color</h2>
+                    </td>
                     <td>
                         <h1 th:text="${rectangle.hatedColor}"></h1>
                     </td>
+                </tr>
+                <tr>
             </table>
             <form th:action="'/delete?rid='+${rectangle.id}" method="post">
                 <label for="delete-button">Delete this rectangle (cannot undo):</label>
