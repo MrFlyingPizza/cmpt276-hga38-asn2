@@ -71,12 +71,13 @@
           <td th:text="${rectangle.hatedColor}" th:style="'background-color:'+${rectangle.hatedColor}+';'"></td>
         </tr>
       </table>
+
+      <div th:if="${count == 0}">
+        <h1>We couldn't find any rectangles, would you like to make one?</h1>
+        <button onclick="location.href='/new_rectangle'">YES, PLEASE!</button>
+      </div>
     </div>
 
-    <div th:if="${count == 0}">
-      <h1>We couldn't find any rectangles, would you like to make one?</h1>
-      <button onclick="location.href='/new_rectangle'">YES, PLEASE!</button>
-    </div>
   </section>
 </main>
 </body>
