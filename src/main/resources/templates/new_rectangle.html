@@ -9,6 +9,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script th:src="@{/javascript/form.js}"></script>
     <title>Create Rectangle</title>
+    <style>
+        .display-container {
+            overflow: scroll;
+            min-height: 10em;
+            max-height: 50em;
+        }
+        #display {
+            border: black solid 0.5em;
+        }
+    </style>
 </head>
 <body>
 <header th:replace="fragments/header :: header"></header>
@@ -18,7 +28,9 @@
     <section class="container">
         <form action="#" class="content" th:object="${rectangle}" method="post">
             <label>Display</label>
-            <div id="display"></div>
+            <div class="display-container">
+                <div id="display"></div>
+            </div>
             <table>
                 <tr>
                     <td>

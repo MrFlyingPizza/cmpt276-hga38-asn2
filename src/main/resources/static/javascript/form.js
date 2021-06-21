@@ -35,6 +35,8 @@ window.onload = function() {
         }
     }
 
+    updateDisplay();
+
     function updateDisplay(e)
     {
         display.innerText = name.value;
