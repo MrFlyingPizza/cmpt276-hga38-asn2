@@ -37,7 +37,7 @@
                         <label for="name">Name of rectangle:</label>
                     </td>
                     <td>
-                        <input type="text" id="name" min="0" th:field="*{name}" required>
+                        <input type="text" id="name" th:field="*{name}" required>
                     </td>
                 </tr>
                 <tr>
@@ -45,7 +45,7 @@
                         <label for="width">Width:</label>
                     </td>
                     <td>
-                        <input type="number" id="width" min="0" th:field="*{width}" required>
+                        <input type="number" id="width" min="0" max="5000" th:field="*{width}" required>
                     </td>
                 </tr>
                 <tr>
@@ -53,7 +53,7 @@
                         <label for="height" >Height:</label>
                     </td>
                     <td>
-                        <input type="number" id="height" th:field="*{height}" required>
+                        <input type="number" id="height" min="0" max="5000" th:field="*{height}" required>
                     </td>
                 </tr>
                 <tr>
