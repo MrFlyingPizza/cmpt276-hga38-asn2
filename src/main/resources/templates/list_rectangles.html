@@ -32,44 +32,47 @@
 <main>
   <h1>List of Rectangles</h1>
   <section class="container">
-    <table>
-      <tr>
-        <th>
-          Display
-        </th>
-        <th>
-          Name
-        </th>
-        <th>
-          Color
-        </th>
-        <th>
-          Width
-        </th>
-        <th>
-          Height
-        </th>
-        <th>
-          Loved Color
-        </th>
-        <th>
-          Hated Color
-        </th>
-      </tr>
-      <tr th:each="rectangle : ${rectangles}">
-        <td>
-          <a th:href="'/rectangle/'+${rectangle.id}">
-            <div class="display" th:style="'background-color:'+${rectangle.color}+';'"></div>
-          </a>
-        </td>
-        <td th:text="${rectangle.name}"></td>
-        <td th:text="${rectangle.color}" th:style="'background-color:'+${rectangle.color}+';'"></td>
-        <td th:text="${rectangle.width}"></td>
-        <td th:text="${rectangle.height}"></td>
-        <td th:text="${rectangle.lovedColor}" th:style="'background-color:'+${rectangle.lovedColor}+';'"></td>
-        <td th:text="${rectangle.hatedColor}" th:style="'background-color:'+${rectangle.hatedColor}+';'"></td>
-      </tr>
-    </table>
+    <div class="content">
+      <table>
+        <tr>
+          <th>
+            Display
+          </th>
+          <th>
+            Name
+          </th>
+          <th>
+            Color
+          </th>
+          <th>
+            Width
+          </th>
+          <th>
+            Height
+          </th>
+          <th>
+            Loved Color
+          </th>
+          <th>
+            Hated Color
+          </th>
+        </tr>
+        <tr th:each="rectangle : ${rectangles}">
+          <td>
+            <a th:href="'/rectangle/'+${rectangle.id}">
+              <div class="display" th:style="'background-color:'+${rectangle.color}+';'"></div>
+            </a>
+          </td>
+          <td th:text="${rectangle.name}"></td>
+          <td th:text="${rectangle.color}" th:style="'background-color:'+${rectangle.color}+';'"></td>
+          <td th:text="${rectangle.width}"></td>
+          <td th:text="${rectangle.height}"></td>
+          <td th:text="${rectangle.lovedColor}" th:style="'background-color:'+${rectangle.lovedColor}+';'"></td>
+          <td th:text="${rectangle.hatedColor}" th:style="'background-color:'+${rectangle.hatedColor}+';'"></td>
+        </tr>
+      </table>
+    </div>
+
     <div th:if="${count == 0}">
       <h1>We couldn't find any rectangles, would you like to make one?</h1>
       <button onclick="location.href='/new_rectangle'">YES, PLEASE!</button>
