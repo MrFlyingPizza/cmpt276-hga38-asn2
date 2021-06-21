@@ -23,6 +23,7 @@ public class RectangleListController {
     private String list_rectangles(Model model) {
         Iterable<Rectangle> rectangles = repository.findAll();
         model.addAttribute("rectangles", rectangles);
+        model.addAttribute("count", repository.count());
         return "list_rectangles";
     }
 

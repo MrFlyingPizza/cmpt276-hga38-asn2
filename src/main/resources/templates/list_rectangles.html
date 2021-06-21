@@ -6,7 +6,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
   <link rel="icon" th:href="@{/icons/favicon.webp}">
-  <title>Rectangles Index</title>
+  <title>List of All Rectangles</title>
   <style>
     .display {
       width: 2em;
@@ -32,6 +32,10 @@
 <main>
   <h1>List of Rectangles</h1>
   <section class="container">
+    <div th:if="${count == 0}">
+      <h1>We couldn't find any rectangles, would you like to make one?</h1>
+      <button onclick="location.href='/new_rectangle'">YES, PLEASE!</button>
+    </div>
     <table>
       <tr>
         <th>
