@@ -6,7 +6,7 @@ body {
 }
 
 main {
-    margin: 0 auto;
+    margin: 0 auto 4em auto;
     width: 50%;
     height: fit-content;
 }
@@ -49,7 +49,7 @@ label {
     font-family: 'Staatliches', cursive;
 }
 
-header {
+header, footer {
     width: 100%;
     height: 2.5em;
     background-color: #111111;

@@ -16,7 +16,6 @@
 
     table {
       width: 100%;
-      table-layout: fixed;
     }
 
     th, td {
@@ -27,6 +26,17 @@
 
     th {
       border-bottom: black solid 0.2em;
+    }
+
+    .name-button {
+      width: 100%;
+      text-decoration: none;
+      font-family: "Gill Sans Extrabold", sans-serif;
+      color: black;
+    }
+    .name-button:hover {
+      color: white;
+      background-color: coral;
     }
   </style>
 </head>
@@ -48,11 +58,11 @@
         </tr>
         <tr th:each="rectangle : ${rectangles}">
           <td>
-            <a th:href="'/rectangle/'+${rectangle.id}">
-              <div class="display" th:style="'background-color:'+${rectangle.color}+';'"></div>
-            </a>
+            <div class="display" th:style="'background-color:'+${rectangle.color}+';'"></div>
           </td>
-          <td th:text="${rectangle.name}"></td>
+          <td>
+            <a th:href="'/rectangle/'+${rectangle.id}" th:text="${rectangle.name}"  class="name-button"></a>
+          </td>
         </tr>
       </table>
 
@@ -64,5 +74,6 @@
 
   </section>
 </main>
+<footer></footer>
 </body>
 </html>
