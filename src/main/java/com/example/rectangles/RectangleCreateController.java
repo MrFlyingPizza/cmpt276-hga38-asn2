@@ -28,7 +28,7 @@ public class RectangleCreateController {
     private String submitRectangleForm(@ModelAttribute Rectangle rectangle, Model model) {
         repository.save(rectangle);
         model.addAttribute("success", true);
-        model.addAttribute("rid", rectangle.getId());
+        model.addAttribute("rectangle", rectangle);
         return "result";
     }
 }
