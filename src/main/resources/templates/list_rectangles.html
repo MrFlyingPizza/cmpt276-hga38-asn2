@@ -60,9 +60,7 @@
           <td>
             <div class="display" th:style="'background-color:'+${rectangle.color}+';'"></div>
           </td>
-          <td>
-            <a th:href="'/rectangle/'+${rectangle.id}" th:text="${rectangle.name}"  class="name-button"></a>
-          </td>
+          <td th:onclick="|location.href='/rectangle/${rectangle.id}'|" th:text="${rectangle.name}" class="name-button"></td>
         </tr>
       </table>
 
@@ -74,6 +72,5 @@
 
   </section>
 </main>
-<footer></footer>
 </body>
 </html>
